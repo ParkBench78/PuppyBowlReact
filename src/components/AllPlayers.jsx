@@ -7,13 +7,21 @@ import {
 import { useState, useEffect } from "react";
 function AllPlayers() {
   const [players, setPlayers] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       setPlayers(await fetchAllPlayers());
-      await renderAllPlayerCards(players);
     }
     fetchData();
   }, []);
+
+  useEffect(() => {
+    async function render() {
+      await renderAllPlayerCards(players);
+    }
+    if (players) render();
+  }, [players]);
+
   return (
     <div>
       <h2>All Players</h2>

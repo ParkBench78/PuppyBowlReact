@@ -1,7 +1,6 @@
 // PlayerList.jsx component
 import React from "react";
 import { useState, useEffect } from "react";
-import PlayerRow from "./PlayerRow";
 import { APIURL } from "../API/api";
 import PlayerTableView from "./PlayerTableView";
 import SelectedPlayer from "./SelectedPlayer";

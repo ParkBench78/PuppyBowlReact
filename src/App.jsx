@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import PlayerList from "./components/PlayerList";
 import Register from "./components/Register";
-// import NavBar from "./components/NavBar";
+import Rosters from "./components/Rosters";
 
 export default function App() {
   return (
@@ -13,6 +13,9 @@ export default function App() {
           <Link className="playerlist-link" to="/">
             Player List
           </Link>
+          <Link className="rosters-link" to="/rosters">
+            Roster
+          </Link>
           <Link className="register-link" to="/register">
             Register
           </Link>
@@ -20,6 +23,7 @@ export default function App() {
         <div>
           <Routes>
             <Route path="/" element={<PlayerList />} />
+            <Route path="/rosters" element={<Rosters />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         </div>

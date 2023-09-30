@@ -93,3 +93,20 @@ button:active {
 input {
   margin-left: 10px;
 }
+
+#navbar {
+  display: flex;
+  background-color: rgb(41, 40, 45);
+}
+.playerlist-link {
+  color: rgb(189, 178, 23);
+  width: 100px;
+}
+.spacer {
+  flex: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}

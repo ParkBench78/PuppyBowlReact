@@ -37,14 +37,18 @@ export default function PlayerRow({
       <td>{player.name}</td>
       <td>{player.breed}</td>
       <td>{teamName(player.teamId)}</td>
-      <button
-        onClick={() => {
-          setSelectedPlayerId(player.id);
-        }}
-      >
-        Details
-      </button>
-      <button onClick={handleDelete}>Delete</button>
+      <td>
+        <button
+          onClick={() => {
+            setSelectedPlayerId(player.id);
+          }}
+        >
+          Details
+        </button>
+      </td>
+      <td>
+        <button onClick={handleDelete}>Delete</button>
+      </td>
     </tr>
   );
 }

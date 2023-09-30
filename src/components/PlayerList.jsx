@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import PlayerRow from "./PlayerRow";
 import { APIURL } from "../API/api";
 import PlayerTableView from "./PlayerTableView";
+import SelectedPlayer from "./SelectedPlayer";
 
 export default function PlayerList() {
   const [players, setPlayers] = useState([]);
@@ -34,17 +35,19 @@ export default function PlayerList() {
   return (
     <div>
       {/* search bar */}
-      <label>
-        Search
-        <input
-          type="text"
-          placeholder="Looking for..."
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-      </label>
+      {!selectedPlayerId && (
+        <label>
+          Search
+          <input
+            type="text"
+            placeholder="Looking for..."
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+        </label>
+      )}
       {selectedPlayerId ? (
         <SelectedPlayer
           selectedPlayerId={selectedPlayerId}

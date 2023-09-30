@@ -16,6 +16,7 @@ export default function PlayerTableView({
           <th>Breed</th>
           <th>Team</th>
           <th></th>
+          <th></th>
         </tr>
         {players &&
           players.map((player) => {

@@ -1,13 +1,49 @@
-export default function PlayerRow({ player, setSelectedPlayerId }) {
+import { APIURL } from "./PlayerList.jsx";
+
+export default function PlayerRow({
+  player,
+  setSelectedPlayerId,
+  fetchPlayers,
+}) {
+  function teamName(id) {
+    if (id === 161) {
+      return "RUFF";
+    }
+    if (id === 162) {
+      return "FLUFF";
+    }
+    return "";
+  }
+  async function handleDelete() {
+    const endpoint = `${APIURL}/${player.id}`;
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "DELETE",
+      });
+      const result = await response.json();
+      console.log("Delete", endpoint);
+      console.log("Delete", result);
+      await fetchPlayers();
+    } catch (err) {
+      console.log("Delete", endpoint);
+      console.error(err);
+    }
+  }
+
   return (
-    <tr
-      onClick={() => {
-        setSelectedPlayerId(player.id);
-      }}
-    >
+    <tr>
       <td>{player.name}</td>
       <td>{player.breed}</td>
-      <td>{player.teamId}</td>
+      <td>{teamName(player.teamId)}</td>
+      <button
+        onClick={() => {
+          setSelectedPlayerId(player.id);
+        }}
+      >
+        Details
+      </button>
+      <button onClick={handleDelete}>Delete</button>
     </tr>
   );
 }

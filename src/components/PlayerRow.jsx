@@ -1,3 +1,4 @@
+// PlayerRow.jsx component
 import { APIURL } from "./PlayerList.jsx";
 export function teamName(id) {
   if (id === 161) {

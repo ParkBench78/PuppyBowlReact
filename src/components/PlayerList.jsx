@@ -1,4 +1,4 @@
-//The PlayerList component
+// PlayerList.jsx component
 import React from "react";
 import { useState, useEffect } from "react";
 import PlayerRow from "./PlayerRow";
@@ -31,7 +31,7 @@ export default function PlayerList({ setSelectedPlayerId }) {
 
   return (
     <table>
-      <caption>Roster</caption>
+      <caption>Player List</caption>
       <tbody>
         <tr>
           <th>Name</th>

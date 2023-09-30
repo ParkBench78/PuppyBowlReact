@@ -1,19 +1,19 @@
 import { APIURL } from "./PlayerList.jsx";
+export function teamName(id) {
+  if (id === 161) {
+    return "RUFF";
+  }
+  if (id === 162) {
+    return "FLUFF";
+  }
+  return "";
+}
 
 export default function PlayerRow({
   player,
   setSelectedPlayerId,
   fetchPlayers,
 }) {
-  function teamName(id) {
-    if (id === 161) {
-      return "RUFF";
-    }
-    if (id === 162) {
-      return "FLUFF";
-    }
-    return "";
-  }
   async function handleDelete() {
     const endpoint = `${APIURL}/${player.id}`;
 

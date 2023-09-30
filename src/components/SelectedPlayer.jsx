@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import SinglePlayer from "./PlayerRow.jsx";
 import { APIURL } from "./PlayerList.jsx";
+import { teamName } from "./PlayerRow.jsx";
 
 export default function SelectedPlayer({
   selectedPlayerId,
@@ -29,9 +30,9 @@ export default function SelectedPlayer({
       {player && (
         <>
           <h2>{player.name} </h2>
-          <h3>{player.breed}</h3>
-          <h3>{player.status}</h3>
-          <h3>{player.teamId}</h3>
+          <h3>Breed: {player.breed}</h3>
+          <h3>Status: {player.status}</h3>
+          <h3>Team: {teamName(player.teamId)}</h3>
           <img className="image" src={player.imageUrl}></img>
         </>
       )}

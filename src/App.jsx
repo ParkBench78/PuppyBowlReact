@@ -14,9 +14,7 @@ export default function App() {
         <SelectedPlayer
           selectedPlayerId={selectedPlayerId}
           setSelectedPlayerId={setSelectedPlayerId}
-        >
-          Selected Player View
-        </SelectedPlayer>
+        />
       ) : (
         <PlayerList setSelectedPlayerId={setSelectedPlayerId} />
       )}

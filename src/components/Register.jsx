@@ -1,7 +1,7 @@
 // Register.jsx component
 import { useEffect, useState } from "react";
 import "../App.css";
-import { APIURL } from "./PlayerList.jsx";
+import { APIURL } from "../API/api";
 
 export default function Register() {
   const [player, setPlayer] = useState(null);

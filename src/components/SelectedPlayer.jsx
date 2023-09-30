@@ -1,7 +1,7 @@
 //The SelectedPlayer component
 import { useState, useEffect } from "react";
 import SinglePlayer from "./PlayerRow.jsx";
-import { APIURL } from "./PlayerList.jsx";
+import { APIURL } from "../API/api.js";
 import { teamName } from "./PlayerRow.jsx";
 
 export default function SelectedPlayer({

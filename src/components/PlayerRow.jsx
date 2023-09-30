@@ -1,5 +1,5 @@
 // PlayerRow.jsx component
-import { APIURL } from "./PlayerList.jsx";
+import { APIURL } from "../API/api";
 export function teamName(id) {
   if (id === 161) {
     return "RUFF";

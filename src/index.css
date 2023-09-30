@@ -89,3 +89,7 @@ button:active {
   /* display: flex;
   flex-direction: column; */
 }
+
+input {
+  margin-left: 10px;
+}

@@ -2,17 +2,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import PlayerRow from "./PlayerRow";
+import { APIURL } from "../API/api";
+import PlayerTableView from "./PlayerTableView";
 
-// Added cohort name to the cohortName variable below
-const cohortName = "2306-FTB-ET-WEB-PT";
-// Use the APIURL variable for fetch requests
-export const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/players`;
-
-export default function PlayerList({ setSelectedPlayerId }) {
+export default function PlayerList() {
   const [players, setPlayers] = useState([]);
-  const [needsToFetchPlayers, setNeedsToFetchPlayers] = useState(false);
-  console.log("Players:", players);
-  console.log(players);
+  const [searchText, setSearchText] = useState("");
+  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
+
+  function filterPlayer(player) {
+    return searchText === ""
+      ? player
+      : player.name.toLowerCase().includes(searchText.toLowerCase());
+  }
 
   async function fetchPlayers() {
     try {
@@ -27,30 +29,35 @@ export default function PlayerList({ setSelectedPlayerId }) {
 
   useEffect(() => {
     fetchPlayers();
-  }, [needsToFetchPlayers]);
+  }, []);
 
   return (
-    <table>
-      <caption>Player List</caption>
-      <tbody>
-        <tr>
-          <th>Name</th>
-          <th>Breed</th>
-          <th>Team</th>
-          <th></th>
-        </tr>
-        {players &&
-          players.map((player) => {
-            return (
-              <PlayerRow
-                key={player.id}
-                player={player}
-                setSelectedPlayerId={setSelectedPlayerId}
-                fetchPlayers={fetchPlayers}
-              />
-            );
-          })}
-      </tbody>
-    </table>
+    <div>
+      {/* search bar */}
+      <label>
+        Search
+        <input
+          type="text"
+          placeholder="Looking for..."
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
+      </label>
+      {selectedPlayerId ? (
+        <SelectedPlayer
+          selectedPlayerId={selectedPlayerId}
+          setSelectedPlayerId={setSelectedPlayerId}
+        />
+      ) : (
+        <PlayerTableView
+          tableName={"Player List"}
+          players={players.filter(filterPlayer)}
+          setSelectedPlayerId={setSelectedPlayerId}
+          fetchPlayers={fetchPlayers}
+        />
+      )}
+    </div>
   );
 }

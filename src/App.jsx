@@ -1,26 +1,24 @@
-import { useState } from "react";
 import "./App.css";
-import "./API/index.js";
-import { Routes, Route, Link } from "react-router-dom";
-import NavBar from "./components/NavBar.jsx";
-import AllPlayers from "./components/AllPlayers.jsx";
-import NewPlayerForm from "./components/NewPlayerForm.jsx";
-import SinglePlayer from "./components/SinglePlayer.jsx";
+import { useState } from "react";
+// import { Routes, Route, Link } from "react-router-dom";
+import PlayerList from "./components/PlayerList";
+import SelectedPlayer from "./components/SelectedPlayer";
 
-function App() {
+export default function App() {
+  const [selectedPlayerId, setSelectedPlayerId] = useState(null);
+
   return (
-    <div id="container">
-      <h1>Puppy Bowl in React</h1>
-      <NavBar />
-      <div id="main-section">
-        <Routes>
-          <Route path="/" element={<AllPlayers />} />
-          <Route path="/SinglePlayer" element={<SinglePlayer />} />
-          <Route path="/NewPlayerForm" element={<NewPlayerForm />} />
-        </Routes>
-      </div>
-    </div>
+    <>
+      {selectedPlayerId ? (
+        <SelectedPlayer
+          selectedPlayerId={selectedPlayerId}
+          setSelectedPlayerId={setSelectedPlayerId}
+        >
+          Selected Player View
+        </SelectedPlayer>
+      ) : (
+        <PlayerList setSelectedPlayerId={setSelectedPlayerId} />
+      )}
+    </>
   );
 }
-
-export default App;

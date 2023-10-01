@@ -1,6 +1,6 @@
 //The SelectedPlayer component
 import { useState, useEffect } from "react";
-import SinglePlayer from "./PlayerRow.jsx";
+// import SinglePlayer from "./PlayerRow.jsx";
 import { APIURL } from "../API/api.js";
 import { teamName } from "./PlayerRow.jsx";
 
@@ -38,7 +38,7 @@ export default function SelectedPlayer({
       )}
       <br />
       <br />
-      <button onClick={handleClick}>Go Back to List</button>
+      <button onClick={handleClick}>Go Back</button>
     </div>
   );
 }

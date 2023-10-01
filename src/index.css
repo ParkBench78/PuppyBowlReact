@@ -1,5 +1,7 @@
 html {
   color-scheme: dark;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
 }
 
 body {
@@ -9,7 +11,6 @@ body {
   line-height: 1.5;
 }
 .wrapper {
-  width: min(900px, 100% - 3rem);
   margin-inline: auto;
 }
 
@@ -27,6 +28,8 @@ td {
 
 caption,
 th {
+  color: yellow;
+  text-shadow: 2px 2px rgb(200 0 0);
   text-align: left;
 }
 
@@ -36,8 +39,23 @@ caption {
   font-weight: 700;
   text-transform: uppercase;
 }
+.search {
+  color: red;
+}
+
+.searchbar {
+  display: flex;
+  box-sizing: border-box;
+}
+.search:hover {
+  cursor: pointer;
+}
 
 th {
+  color: yellow;
+  text-shadow: 2px 2px rgb(200 0 0);
+  font-weight: 500;
+  font-size: x-large;
   background: hsl(0 0% 0%/0.5);
 }
 
@@ -66,14 +84,14 @@ tr:nth-of-type(2n) {
 }
 button {
   margin-right: 10px;
-  background-color: rgb(61, 4, 4);
+  background-color: rgb(200 0 0);
   color: white;
   border: none;
   height: 36px;
   width: 105px;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 1s, color1s;
+  transition: background-color 1s, color 1s;
 }
 button:hover {
   background-color: white;
@@ -88,31 +106,90 @@ button:active {
   width: 200px;
 }
 
-.selectedPlayerContainer {
-  /* display: flex;
-  flex-direction: column; */
-}
-
 input {
   margin-left: 10px;
 }
 
 #navbar {
+  border: 3px solid rgb(67, 25, 107);
   display: flex;
   background-color: rgb(41, 40, 45);
 }
 .playerlist-link,
 .register-link,
 .rosters-link {
-  color: rgb(189, 178, 23);
+  justify-content: right;
+  color: yellow;
+  text-shadow: 1px 1px red;
   margin-right: 20px;
+  text-decoration: none;
+  font-size: x-large;
+  padding: 30px 0px 45px 0px;
+}
+
+#navbar:hover {
+  background: hsl(0 0% 0%);
 }
 
 .spacer {
   flex: 1;
+  justify-content: right;
+  color: yellow;
+  text-shadow: 2px 2px red;
+  margin-right: 20px;
+  padding: 13px 0px 30px 0px;
+  text-decoration: none;
+  font-size: xx-large;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+}
+
+select {
+  width: 150px;
+}
+
+#entry {
+  box-sizing: border-box;
+  background-color: rgb(41, 40, 45);
+  padding: 80px 100px;
+  /* border: 3px solid yellow; */
+  border: 3px solid rgb(67, 25, 107);
+  margin: auto;
+  width: 400px;
+  left: 100px;
+  right: 100px;
+  top: 200px;
+  position: absolute;
+}
+.selectedPlayerContainer {
+  box-sizing: border-box;
+  padding: 50px;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+.form {
+  text-align: center;
+}
+
+form > h2 {
+  text-align: center;
+}
+
+.left-margin {
+  margin-left: 20px;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+}
+
+#entry > h2 {
+  color: yellow;
+  text-shadow: 2px 2px rgb(200 0 0);
 }

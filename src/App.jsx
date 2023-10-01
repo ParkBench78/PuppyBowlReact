@@ -9,7 +9,7 @@ export default function App() {
     <>
       <div id="container">
         <div id="navbar">
-          <h2 className="spacer">Puppy Bowl React</h2>
+          <h1 className="spacer left-margin">Puppy Bowl React</h1>
           <Link className="playerlist-link" to="/">
             Player List
           </Link>

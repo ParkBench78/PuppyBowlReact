@@ -32,10 +32,10 @@ export default function PlayerList() {
   }, []);
 
   return (
-    <div>
+    <div className="searchbar">
       {/* search bar */}
       {!selectedPlayerId && (
-        <label>
+        <label className="search">
           Search
           <input
             type="text"

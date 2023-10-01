@@ -1,6 +1,5 @@
 // Register.jsx component
-
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../index.css";
 import { APIURL } from "../API/api";
 

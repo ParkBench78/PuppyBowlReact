@@ -1,5 +1,6 @@
 //App.jsx
-import "./App.css";
+
+// import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import PlayerList from "./components/PlayerList";
 import Register from "./components/Register";

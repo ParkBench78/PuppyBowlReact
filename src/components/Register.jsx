@@ -41,7 +41,9 @@ export default function Register() {
       imageUrl:
         "https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-3_1562-692.jpg",
     };
+
     await addNewPlayer(player);
+
     setName("");
     setBreed("");
     setStatus("");
